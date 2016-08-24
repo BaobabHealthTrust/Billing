@@ -22,3 +22,9 @@ config/*.yml
 .ruby-version
 *.pid
 .rvmrc
+
+# ignore all swap files
+*.swp
+
+# ignore touchscreentoolkit changes
+public/touchscreentoolkit/

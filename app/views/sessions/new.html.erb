@@ -1,0 +1,9 @@
+<div id='content'>
+    <div id='description'>
+        <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.text_field :username, id: 'username', helptext: 'Username' %>
+            <%= f.password_field :password, id: 'password', helptext: 'Password' %>
+        <% end %>
+    </div>
+</div>
+
