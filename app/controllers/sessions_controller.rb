@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
 	def new
-		if logged_in?
-			raise 'already logged in'
-		end
+
 	end
 
 	def create
@@ -10,7 +8,7 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:session][:password])
 			# login & redirect to landing page
 			log_in user
-			redirect_to '/login'
+			redirect_to '/'
 		else
 			# redirect to login with an error message
 			render 'new'

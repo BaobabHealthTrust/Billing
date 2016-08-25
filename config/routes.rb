@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-	#root 'sessions#new'
+    get '/', to: 'home#index'
+
+	root 'home#index'
 
 	get 'user/new'
 
