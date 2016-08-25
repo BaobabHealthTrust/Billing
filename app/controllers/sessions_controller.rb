@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 	def create
 		user = User.find_by(username: params[:session][:username])
 		if user && user.authenticate(params[:session][:password])
-			# login & redirect to landing page
+			# login & redirect to dashboard
 			log_in user
 			redirect_to '/'
 		else

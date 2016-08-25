@@ -1,8 +1,8 @@
 <div id='content'>
     <div id='description'>
         <%= form_for(:session, url: login_path) do |f| %>
-            <%= f.text_field :username, id: 'username', helptext: 'Username' %>
-            <%= f.password_field :password, id: 'password', helptext: 'Password' %>
+            <%= f.text_field :username, id: 'username', helptext: 'Username', textcase: 'lower' %>
+            <%= f.password_field :password, id: 'password', helptext: 'Password', textcase: 'lower' %>
         <% end %>
     </div>
 </div>

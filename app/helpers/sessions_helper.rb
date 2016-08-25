@@ -19,6 +19,6 @@ module SessionsHelper
 	def log_out
 		session.delete(:user_id)
 		@current_user = nil
-		redirect_to '/login' # to be changed to atleast root when root is configured in routes
+		redirect_to '/' # to be changed to atleast root when root is configured in routes
 	end
 end
