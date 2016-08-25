@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+    get '/administration', to: 'administration#index'
+
     get '/', to: 'home#index'
 
 	root 'home#index'
 
-	get 'user/new'
+	get '/add_user', to: 'user#new'
 
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
