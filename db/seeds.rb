@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+##################################################################################################
+# create admin login credentials
+#
+
+admin = User.new(username: 'admin', password: 'test', password_confirmation: 'test')
+if admin.valid?
+	admin.save
+	puts '### -------------------------------------------------------- ###'
+	puts '### Admin login credentials successfully written to Database ###'
+	puts "### Username: 'admin'                                        ###"
+	puts "### Password: 'test'                                         ###"
+	puts '###--------------------------------------------------------- ###'
+else
+	puts 'Failed to write admin credentials to Database.'
+end
+
+#
+#
+##################################################################################################
