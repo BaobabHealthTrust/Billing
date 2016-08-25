@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
 	get '/add_user', to: 'user#new'
 
+    post 'add_user', to: 'user#create'
+
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
 	get '/logout', to: 'sessions#destroy'

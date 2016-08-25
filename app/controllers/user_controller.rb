@@ -6,6 +6,6 @@ class UserController < ApplicationController
 
 	end
 	def create
-
+		raise params.inspect
 	end
 end
