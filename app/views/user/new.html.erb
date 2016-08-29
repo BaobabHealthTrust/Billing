@@ -1,9 +1,23 @@
 <div id='content'>
     <div id='description'>
         <%= form_tag 'add_user' do %>
-            <input type='text' helpText='Set Username' name='username'>
-            <input type='password' helpText='Set Password', name='password'>
-            <input type='password' helpText='Confirm Password', name='password_confirmation'>
+            <input type='text' helpText='Set Username' name='username' textcase='lower'>
+            <input type='password' helptext='Set Password', name='password' textcase='lower'>
+            <input type='password' helptext='Confirm Password', name='password_confirmation' textcase='lower'>
+            <select style='width: 100%' name='user_role_id' id='user_role'
+                  helptext='Specify User Role' nested='true' tt_onload='resizeInputFrame();'>
+                <% @roles.each do |user_role| %>
+                    <option></option>
+                    <option value="<%= user_role.id %>"><%= user_role.role %></option>
+                <% end %>
+            </select>
         <% end %>
     </div>
 </div>
+
+<script>
+    function resizeInputFrame() {
+        input_frame = document.getElementById('inputFrame'+tstCurrentPage);
+        input_frame.style.height = 'calc(100% - 100px)';
+    }
+</script>
