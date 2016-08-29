@@ -1,10 +1,9 @@
 <div id='content'>
     <div id='description'>
-        <%= form_tag '/add_user' do %>
-            <%= text_field :username, id: 'username', helptext: 'Set Username', textcase: 'lower' %>
-            <%= password_field :password, id: 'password', helptext: 'Set Password', textcase: 'lower' %>
-            <%= password_field :password_confirmation, id: 'password_confirmation', helptext: 'Re-enter Password',
-                               textcase: 'lower' %>
+        <%= form_tag 'add_user' do %>
+            <input type='text' helpText='Set Username' name='username'>
+            <input type='password' helpText='Set Password', name='password'>
+            <input type='password' helpText='Confirm Password', name='password_confirmation'>
         <% end %>
     </div>
 </div>
