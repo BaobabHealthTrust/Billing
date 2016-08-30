@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// resize the inputframe to closely link to the bottom control buttons.
+function resizeInputFrame() {
+	input_frame = document.getElementById('inputFrame'+tstCurrentPage);
+	input_frame.style.height = 'calc(100% - 100px)';
+}

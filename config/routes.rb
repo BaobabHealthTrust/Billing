@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
 	root 'home#index'
 
+    get '/users', to: 'user#show'
+    post 'delete_users', to: 'user#delete'
+
 	get '/add_user', to: 'user#new'
 
     post 'add_user', to: 'user#create'

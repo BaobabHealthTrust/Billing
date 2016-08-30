@@ -4,7 +4,8 @@ class UserController < ApplicationController
 
 	end
 	def show
-
+		@users = User.all
+		render 'show_users'
 	end
 
 	# create new user
@@ -29,5 +30,10 @@ class UserController < ApplicationController
 		else
 
 		end
+	end
+
+	# delete selected user(s)
+	def delete
+		raise params.inspect
 	end
 end
