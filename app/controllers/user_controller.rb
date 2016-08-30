@@ -34,6 +34,22 @@ class UserController < ApplicationController
 
 	# delete selected user(s)
 	def delete
-		raise params.inspect
+		selected_users = params[:users]
+		selected_users.each do |user|
+			selected_user = User.find_by_username(user)
+			if user.blank?
+				next
+			elsif selected_user.user_role_id == UserRole.find_by_role('Administrator').id
+				# user being deleted has admin rights
+				# write code to verify deleting of admin account
+			elsif user == current_user.username
+				next # do not allow deleting of logged user
+			else
+				if selected_user.valid?
+					selected_user.destroy
+				end
+			end
+		end
+		redirect_to '/' and return
 	end
 end
