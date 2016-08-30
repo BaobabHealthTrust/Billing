@@ -17,9 +17,11 @@
             Reports
         </option>
 
-        <option value="/administration">
-            Administration
-        </option>
+        <% if @current_user_role == 'Administrator' %>
+            <option value="/administration">
+                Administration
+            </option>
+        <% end %>
     </select>
 
     <div id="facility">Facility</div>
