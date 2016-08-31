@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 	def create
 		user = User.find_by(username: params[:session][:username])
 		if user && user.authenticate(params[:session][:password])
-			# login & redirect to dashboard
 			log_in user
 			redirect_to '/'
 		else
@@ -17,6 +16,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		log_out
-		# redirect_to redirect to possibly root
+		# redirect_to redirect to possibly root 'to rethink redirect code'
 	end
 end

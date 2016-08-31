@@ -8,9 +8,7 @@ class UserController < ApplicationController
 		render 'show_users'
 	end
 
-	# create new user
 	def create
-		# set parameter values to variables
 		username                = params[:username]
 		password                = params[:password]
 		password_confirmation   = params[:password_confirmation]
@@ -23,7 +21,7 @@ class UserController < ApplicationController
 			                    password_confirmation: password_confirmation, user_role_id: user_role_id)
 			if new_user.valid?
 				new_user.save
-				redirect_to '/' # redirect to Dashboard if successfully created new user.
+				redirect_to '/'
 			else
 
 			end
@@ -32,7 +30,6 @@ class UserController < ApplicationController
 		end
 	end
 
-	# delete selected user(s)
 	def delete
 		selected_users = params[:users]
 		selected_users.each do |user|
